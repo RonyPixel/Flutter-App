@@ -121,7 +121,7 @@ class _mainPageState extends State<mainPage> {
                       ),
                       onPressed: () {
                         setState(() {
-                          Color(0xff2191ce);
+                          Color(0xff2657ce);
                         });
                       }),
                   IconButton(
@@ -131,9 +131,11 @@ class _mainPageState extends State<mainPage> {
                         size: 40,
                       ),
                       onPressed: () {
-                        setState(() {
-                          Color(0xff2657ce);
-                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SecondRoute()),
+                        );
                       }),
                   IconButton(
                       icon: Icon(
@@ -142,9 +144,11 @@ class _mainPageState extends State<mainPage> {
                         size: 40,
                       ),
                       onPressed: () {
-                        setState(() {
-                          Color(0xff2657ce);
-                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SecondRoute()),
+                        );
                       }),
                   IconButton(
                       icon: Icon(
@@ -252,5 +256,18 @@ class _mainPageState extends State<mainPage> {
   void openCoursePage(String img, String title) {
     Navigator.pushNamed(context, '/coursePage',
         arguments: {'img': '$img', 'title': '$title'});
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: NavDrawer(),
+      appBar: AppBar(
+        backgroundColor: Color(0xff2657ce),
+        title: Text("Writer Yard"),
+      ),
+    );
   }
 }

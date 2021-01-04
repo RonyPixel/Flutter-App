@@ -47,7 +47,7 @@ class _CoursePageState extends State<CoursePage> {
               ),
             ),
             Text(
-              'Sarah Parknson',
+              'Rohan',
               style:
                   TextStyle(color: Colors.black.withOpacity(0.6), fontSize: 20),
             ),
