@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onlinelearning/CoursePage.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-//import 'package:onlinelearning/main.dart';
 import 'Widgets.dart';
-//import 'NavBar.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -45,7 +43,7 @@ class _mainPageState extends State<mainPage> {
                 boxFit: BoxFit.cover,
                 autoplay: true,
                 animationCurve: Curves.fastOutSlowIn,
-                animationDuration: Duration(milliseconds: 1000),
+                animationDuration: Duration(milliseconds: 700),
                 dotSize: 4.0,
                 dotColor: Colors.red[200],
                 dotBgColor: Colors.transparent,
@@ -53,7 +51,6 @@ class _mainPageState extends State<mainPage> {
                 showIndicator: true,
                 indicatorBgPadding: 7.0,
                 images: [
-                  //  AssetImage('assets/images/profilePic.png'),
                   AssetImage('assets/image/1.jpg'),
                   AssetImage('assets/image/2.jpg'),
                   AssetImage('assets/image/3.jpg'),
@@ -129,16 +126,12 @@ class _mainPageState extends State<mainPage> {
                         size: 40,
                       ),
                       onPressed: () {
-                        // Navigator.push(context, route)
-                        // Container(
-                        //   child: Text("hello"),
-                        //   width: 100,
-                        //   height: 100,
-                        // );
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => SecondRoute()),
+                          PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => SecondRoute(),
+                            transitionDuration: Duration(seconds: 0),
+                          ),
                         );
                       }),
                   IconButton(
@@ -150,13 +143,11 @@ class _mainPageState extends State<mainPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ThirdRoute()),
+                          PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => ThirdRoute(),
+                            transitionDuration: Duration(seconds: 0),
+                          ),
                         );
-
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => SecondRoute()),
                       }),
                   IconButton(
                       icon: Icon(
@@ -167,8 +158,10 @@ class _mainPageState extends State<mainPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => FourthRoute()),
+                          PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => FourthRoute(),
+                            transitionDuration: Duration(seconds: 0),
+                          ),
                         );
                       }),
                 ],
@@ -278,75 +271,87 @@ class SecondRoute extends StatelessWidget {
         backgroundColor: Color(0xff2657ce),
         title: Text("Writer Yard"),
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                child: Icon(Icons.accessibility),
-                height: 10,
-              ),
-              Container(
-                child: Icon(Icons.account_balance),
-                height: 10,
-              ),
-            ],
-          )),
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Container(
+        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                IconButton(
-                    icon: Icon(
-                      Icons.subscriptions,
-                      color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => MainPage()),
-                      );
-                    }),
-                IconButton(
-                    icon: Icon(
-                      Icons.play_circle_filled,
-                      color: Color(0xff2657ce),
-                      size: 40,
-                    ),
-                    onPressed: () {}),
-                IconButton(
-                  icon: Icon(
-                    Icons.account_circle,
-                    color: Color(0xff2657ce).withOpacity(0.5),
-                    size: 40,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ThirdRoute()),
-                    );
-                  },
+                Container(
+                  child: Icon(Icons.accessibility),
+                  height: 10,
                 ),
-                IconButton(
+                Container(
+                  child: Icon(Icons.account_balance),
+                  height: 10,
+                ),
+              ],
+            )),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  IconButton(
+                      icon: Icon(
+                        Icons.subscriptions,
+                        color: Color(0xff2657ce).withOpacity(0.5),
+                        size: 40,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => MainPage(),
+                            transitionDuration: Duration(seconds: 0),
+                          ),
+                        );
+                      }),
+                  IconButton(
+                      icon: Icon(
+                        Icons.play_circle_filled,
+                        color: Color(0xff2657ce),
+                        size: 40,
+                      ),
+                      onPressed: () {}),
+                  IconButton(
                     icon: Icon(
-                      Icons.attach_money,
+                      Icons.account_circle,
                       color: Color(0xff2657ce).withOpacity(0.5),
                       size: 40,
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => FourthRoute()),
+                        PageRouteBuilder(
+                          pageBuilder: (_, __, ___) => ThirdRoute(),
+                          transitionDuration: Duration(seconds: 0),
+                        ),
                       );
-                    }),
-              ],
+                    },
+                  ),
+                  IconButton(
+                      icon: Icon(
+                        Icons.attach_money,
+                        color: Color(0xff2657ce).withOpacity(0.5),
+                        size: 40,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => FourthRoute(),
+                            transitionDuration: Duration(seconds: 0),
+                          ),
+                        );
+                      }),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -361,82 +366,89 @@ class ThirdRoute extends StatelessWidget {
         backgroundColor: Color(0xff2657ce),
         title: Text("Writer Yard"),
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                child: Icon(Icons.three_k),
-                height: 10,
-              ),
-              Container(
-                child: Icon(Icons.account_balance),
-                height: 10,
-              ),
-            ],
-          )),
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Container(
+        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                IconButton(
+                Container(
+                  child: Icon(Icons.three_k),
+                  height: 10,
+                ),
+                Container(
+                  child: Icon(Icons.account_balance),
+                  height: 10,
+                ),
+              ],
+            )),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  IconButton(
+                      icon: Icon(
+                        Icons.subscriptions,
+                        color: Color(0xff2657ce).withOpacity(0.5),
+                        size: 40,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => MainPage(),
+                            transitionDuration: Duration(seconds: 0),
+                          ),
+                        );
+                      }),
+                  IconButton(
                     icon: Icon(
-                      Icons.subscriptions,
+                      Icons.play_circle_filled,
                       color: Color(0xff2657ce).withOpacity(0.5),
                       size: 40,
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MainPage()),
+                        PageRouteBuilder(
+                          pageBuilder: (_, __, ___) => SecondRoute(),
+                          transitionDuration: Duration(seconds: 0),
+                        ),
                       );
-                    }),
-                IconButton(
-                  icon: Icon(
-                    Icons.play_circle_filled,
-                    color: Color(0xff2657ce).withOpacity(0.5),
-                    size: 40,
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SecondRoute()),
-                    );
-                  },
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.account_circle,
-                    color: Color(0xff2657ce),
-                    size: 40,
+                  IconButton(
+                    icon: Icon(
+                      Icons.account_circle,
+                      color: Color(0xff2657ce),
+                      size: 40,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ThirdRoute()),
-                    );
-                  },
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.attach_money,
-                    color: Color(0xff2657ce).withOpacity(0.5),
-                    size: 40,
+                  IconButton(
+                    icon: Icon(
+                      Icons.attach_money,
+                      color: Color(0xff2657ce).withOpacity(0.5),
+                      size: 40,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (_, __, ___) => FourthRoute(),
+                          transitionDuration: Duration(seconds: 0),
+                        ),
+                      );
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => FourthRoute()),
-                    );
-                  },
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -451,82 +463,89 @@ class FourthRoute extends StatelessWidget {
         backgroundColor: Color(0xff2657ce),
         title: Text("Writer Yard"),
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                child: Icon(Icons.four_k),
-                height: 10,
-              ),
-              Container(
-                child: Icon(Icons.account_balance),
-                height: 10,
-              ),
-            ],
-          )),
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Container(
+        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                IconButton(
+                Container(
+                  child: Icon(Icons.four_k),
+                  height: 10,
+                ),
+                Container(
+                  child: Icon(Icons.account_balance),
+                  height: 10,
+                ),
+              ],
+            )),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  IconButton(
+                      icon: Icon(
+                        Icons.subscriptions,
+                        color: Color(0xff2657ce).withOpacity(0.5),
+                        size: 40,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => MainPage(),
+                            transitionDuration: Duration(seconds: 0),
+                          ),
+                        );
+                      }),
+                  IconButton(
                     icon: Icon(
-                      Icons.subscriptions,
+                      Icons.play_circle_filled,
                       color: Color(0xff2657ce).withOpacity(0.5),
                       size: 40,
                     ),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MainPage()),
+                        PageRouteBuilder(
+                          pageBuilder: (_, __, ___) => SecondRoute(),
+                          transitionDuration: Duration(seconds: 0),
+                        ),
                       );
-                    }),
-                IconButton(
-                  icon: Icon(
-                    Icons.play_circle_filled,
-                    color: Color(0xff2657ce).withOpacity(0.5),
-                    size: 40,
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SecondRoute()),
-                    );
-                  },
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.account_circle,
-                    color: Color(0xff2657ce).withOpacity(0.5),
-                    size: 40,
+                  IconButton(
+                    icon: Icon(
+                      Icons.account_circle,
+                      color: Color(0xff2657ce).withOpacity(0.5),
+                      size: 40,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (_, __, ___) => ThirdRoute(),
+                          transitionDuration: Duration(seconds: 0),
+                        ),
+                      );
+                    },
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ThirdRoute()),
-                    );
-                  },
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.attach_money,
-                    color: Color(0xff2657ce),
-                    size: 40,
+                  IconButton(
+                    icon: Icon(
+                      Icons.attach_money,
+                      color: Color(0xff2657ce),
+                      size: 40,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => FourthRoute()),
-                    );
-                  },
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

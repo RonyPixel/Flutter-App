@@ -15,7 +15,7 @@ class _CoursePageState extends State<CoursePage> {
     chosenTitle = arguments['title'];
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff2657ce),
         elevation: 0,
         leading: Container(
           padding: EdgeInsets.all(5),
