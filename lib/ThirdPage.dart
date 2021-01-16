@@ -23,14 +23,14 @@ class ThirdRoute extends StatelessWidget {
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(
-                  width: 10,
-                  height: 0,
-                  child: Column(
-                    Text('Your Profile'),
-                  ),
-                  // Text('Your Profile'),
-                ),
+                // // SizedBox(
+                // //   width: 10,
+                // //   height: 0,
+                // //   child: Column(
+                // //     Text('Your Profile'),
+                // //   ),
+                //   // Text('Your Profile'),
+                // ),
                 SizedBox(
                   height: 115,
                   width: 115,
