@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'MainPage.dart';
 
 final imagesList = [
-  "assets/images/newyork.jpg",
-  "assets/images/capetown.jpg",
-  "assets/images/switzerland.jpg",
+  "assets/images/free.jpg",
+  "assets/images/standard.jpg",
+  "assets/images/premium.jpg",
 ];
 
 final colorList = [
@@ -231,4 +231,3 @@ class _CityExplorerPageState extends State<CityExplorerPage> {
     });
   }
 }
-

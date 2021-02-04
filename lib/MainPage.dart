@@ -32,7 +32,7 @@ class _mainPageState extends State<mainPage> {
       drawer: NavDrawer(),
       appBar: AppBar(
         backgroundColor: Color(0xff2657ce),
-        title: Text('Writer Yard'),
+        title: Text('WellBaked Tech'),
       ),
       body: Container(
         padding: EdgeInsets.only(top: 20, left: 20, right: 20),

@@ -34,23 +34,26 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(left: 30),
+            padding: EdgeInsets.only(bottom: 40, left: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
                   child: Text(
-                    "Online learning",
+                    "LEARN",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 40,
+                        fontSize: 45,
                         fontWeight: FontWeight.w900,
                         height: 1),
                   ),
                 ),
+                SizedBox(
+                  height: 5,
+                ),
                 Container(
                   child: Text(
-                    "is not the next",
+                    "Everything",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -58,19 +61,25 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 1),
                   ),
                 ),
+                SizedBox(
+                  height: 7,
+                ),
                 Container(
                   child: Text(
-                    "big thing,",
+                    "Anytime",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.blueGrey,
                         fontSize: 40,
                         fontWeight: FontWeight.w900,
                         height: 1),
                   ),
                 ),
+                SizedBox(
+                  height: 5,
+                ),
                 Container(
                   child: Text(
-                    "it is now the",
+                    "Anywhere.",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -78,16 +87,25 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 1),
                   ),
                 ),
-                Container(
-                  child: Text(
-                    "BIG THING,",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.w900,
-                        height: 1),
-                  ),
-                ),
+                //       Container(
+                //         child: Text(
+                //           "it is now the",
+                //           style: TextStyle(
+                //               color: Colors.white,
+                //               fontSize: 40,
+                //               fontWeight: FontWeight.w500,
+                //               height: 1),
+                //         ),
+                //       ),
+                //       Container(
+                //         child: Text(
+                //           "BIG THING,",
+                //           style: TextStyle(
+                //               color: Colors.white,
+                //               fontSize: 40,
+                //               fontWeight: FontWeight.w900,
+                //               height: 1),
+                //         ),
               ],
             ),
           ),
