@@ -17,7 +17,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Screenshots:
-<img src="https://github.com/RonyPixel/Flutter-App/blob/master/assets/images/home.jpg" width="200" height="250">
+<img src="https://github.com/RonyPixel/Flutter-App/blob/master/assets/images/home.jpg" width="150" height="250">
+<img src="https://github.com/RonyPixel/Flutter-App/blob/master/assets/images/splash.jpg" width="150" height="250">
+<img src="https://github.com/RonyPixel/Flutter-App/blob/master/assets/images/user1.jpg" width="150" height="250">
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
