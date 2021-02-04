@@ -16,5 +16,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+## Screenshots:
+![alt text](https://github.com/RonyPixel/Flutter-App/blob/master/assets/images/home.jpg)
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
