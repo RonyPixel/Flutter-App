@@ -1,4 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'MainPage.dart';
+import 'ThirdPage.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
@@ -21,12 +24,28 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.input),
             title: Text('Home'),
-            onTap: () => {},
+            onTap: () {
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => MainPage(),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.verified_user),
             title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () {
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => ThirdRoute(),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings),
@@ -34,14 +53,9 @@ class NavDrawer extends StatelessWidget {
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('Feedback'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
             leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
+            title: Text('Exit'),
+            onTap: () => exit(0),
           ),
         ],
       ),

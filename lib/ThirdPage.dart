@@ -16,6 +16,11 @@ class ThirdRoute extends StatelessWidget {
         title: Text("WellBaked Tech"),
       ),
       body: Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/profileBG.png'),
+                fit: BoxFit.cover)),
         padding: EdgeInsets.only(top: 75, left: 20, right: 20),
         child: Column(
           children: <Widget>[

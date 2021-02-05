@@ -14,6 +14,11 @@ class SecondRoute extends StatelessWidget {
         title: Text("WellBaked Tech"),
       ),
       body: Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/exploreBG.png'),
+                fit: BoxFit.cover)),
         padding: EdgeInsets.only(top: 20, left: 20, right: 20),
         child: Column(
           children: <Widget>[
@@ -22,12 +27,29 @@ class SecondRoute extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                  child: Icon(Icons.accessibility),
-                  height: 10,
-                ),
-                Container(
-                  child: Icon(Icons.account_balance),
-                  height: 10,
+                  width: 200,
+                  height: 40,
+                  child: FlatButton(
+                    color: Colors.transparent,
+                    textColor: Color(0xff2657ce),
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    child: Row(
+                      children: <Widget>[
+                        Icon(Icons.add_to_photos_rounded),
+                        Text('Add New Course'),
+                      ],
+                    ),
+                    // splashColor: Colors.blueAccent,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (_, __, ___) => MainPage(),
+                          transitionDuration: Duration(seconds: 0),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             )),
